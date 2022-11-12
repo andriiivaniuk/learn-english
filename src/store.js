@@ -14,6 +14,7 @@ const getInitialStore = () => {
         appInfo: {
             mode: null,
             currentWord: null,
+            currentWordData: null,
             results: null
         }
     }
