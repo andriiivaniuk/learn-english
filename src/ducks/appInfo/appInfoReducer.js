@@ -1,5 +1,6 @@
 import { 
-    GET_CURRENT_WORD_INFO
+    GET_CURRENT_WORD_INFO,
+    SET_USER_LANGUGAGE
  } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -9,6 +10,13 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 currentWordData: action.payload
             }
+
+        case SET_USER_LANGUGAGE:
+            return {
+                ...state,
+                userLanguage: action.payload
+            }
+
         default:
             return state;
     }

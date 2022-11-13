@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <CreateGlobalStyle />
+      
       <Header />
       <Router />
     </div>

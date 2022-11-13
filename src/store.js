@@ -15,7 +15,8 @@ const getInitialStore = () => {
             mode: null,
             currentWord: null,
             currentWordData: null,
-            results: null
+            results: null,
+            userLanguage: "ua"
         }
     }
 }

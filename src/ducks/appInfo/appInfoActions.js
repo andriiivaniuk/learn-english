@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const GET_CURRENT_WORD_INFO = "GET_CURRENT_WORD_INFO";
+export const SET_USER_LANGUGAGE = "SET_USER_LANGUGAGE";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -25,5 +26,12 @@ export const getCurrentWordInfo = (data) => {
     return {
         type: GET_CURRENT_WORD_INFO,
         payload: data
+    }
+}
+
+export const setUserLanguage = (lang) => {
+    return {
+        type: SET_USER_LANGUGAGE,
+        payload: lang
     }
 }
