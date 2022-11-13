@@ -19,7 +19,7 @@ import { LANGUAGES } from "../../config/languages";
 function LangDropDown() {
 
     const currentLang = useSelector(state => state.appInfo.userLanguage);
-    const [isOptionsShown, setIsOptionsShown] = useState(true);
+    const [isOptionsShown, setIsOptionsShown] = useState(false);
     const dispatch = useDispatch();
 
     return (  

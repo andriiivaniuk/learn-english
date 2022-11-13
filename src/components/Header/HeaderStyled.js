@@ -8,6 +8,7 @@ import {
  } from "../../config/constants";
 
 export const HeaderStyled = styled.nav`
+    width: 100%;
     font-family: 'Manrope';
     font-size: ${DESKTOP_FONT_SIZE}rem;
 
@@ -17,5 +18,4 @@ export const HeaderStyled = styled.nav`
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-    width: 100%;
 `
