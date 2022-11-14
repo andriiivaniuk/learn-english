@@ -60,7 +60,8 @@ export const TestYourselfColumn = styled.div`
 `
 
 export const TestYourselfDesc = styled.p`
-
+    padding-bottom: 1rem;
+    border-bottom: 2px ${DESIGN_CONST.button.borderColor} solid;
 `
 
 export const TestYourselfBtn = styled.button`
@@ -112,7 +113,8 @@ export const LearnSomeWordsColumn = styled.div`
 `
 
 export const LearnSomeWordsDesc = styled.p`
-
+    padding-bottom: 1rem;
+    border-bottom: 2px ${DESIGN_CONST.button.borderColor} solid;
 `
 
 export const LearnSomeWordsBtn = styled.button`

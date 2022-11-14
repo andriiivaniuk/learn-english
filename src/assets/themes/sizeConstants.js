@@ -1,3 +1,5 @@
+export const MAX_SITE_CONTENT = 1200;
+
 export const TABLET_WIDTH = 1000;
 export const MOBILE_WIDTH = 650;
 

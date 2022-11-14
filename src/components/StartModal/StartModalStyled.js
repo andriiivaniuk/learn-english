@@ -5,7 +5,8 @@ import { DESIGN_CONST } from "../../assets/themes/designConstants";
 import { 
     DESKTOP_FONT_SIZE,
     TABLET_FONT_SIZE,
-    MOBILE_FONT_SIZE
+    MOBILE_FONT_SIZE,
+    TABLET_WIDTH
 } from "../../assets/themes/sizeConstants";
 
 export const ModalBackground = styled.div`
@@ -32,8 +33,10 @@ export const ModalContainer = styled.div`
     position: relative;
     color: black;
 
-    @media (max-width: 610px) {
-        
+    @media (max-width: ${TABLET_WIDTH}px) {
+        min-width: 0;
+        width: fit-content;
+        margin: 1rem 2rem;
     }
 `
 export const ModalContainerCloseBtnWrapper = styled.div`
@@ -54,9 +57,20 @@ export const CloseBtn = styled.img`
 export const ModalContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 2rem;
 `
 
 export const ModalTitle = styled.span`
-    font-size: ${DESKTOP_FONT_SIZE * 2};
+    font-size: ${DESKTOP_FONT_SIZE}rem;
+`
+
+export const TitleDevider = styled.div`
+    background-color: black;
+    height: 2px;
+    margin-top: 1rem;
+    width: 100%;
+`
+
+export const ModalSettings = styled.span`
+    
 `

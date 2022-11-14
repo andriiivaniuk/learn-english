@@ -14,7 +14,9 @@ import {
     ModalContainerCloseBtnWrapper,
     CloseBtn,
     ModalContentWrapper,
-    ModalTitle
+    ModalTitle,
+    ModalSettings,
+    TitleDevider
 } from "./StartModalStyled";
 
 import { StartModalTexts } from "./StartModalTexts";
@@ -74,6 +76,10 @@ function StartModal({setModalVisibility}) {
                     <ModalTitle>
                         {StartModalTexts.ModalTitle[mode][lang]}
                     </ModalTitle>
+                    <TitleDevider />
+                    <ModalSettings>
+
+                    </ModalSettings>
                 </ModalContentWrapper>
 
             </ModalContainer>
