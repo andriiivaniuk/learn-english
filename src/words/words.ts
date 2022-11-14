@@ -43,6 +43,14 @@ export const words: Iword[] = [
         translationUkr: "створювати",
         translationRus: "создавать",
         difficulty: EdifficultyLevel.Easy
+    },
+    {
+        id: 3,
+        speechPart: EspeechPart.Adjective,
+        word: "confident",
+        translationRus: "уверенный",
+        translationUkr: "впевнений",
+        difficulty: EdifficultyLevel.Medium
     }
 ];
 

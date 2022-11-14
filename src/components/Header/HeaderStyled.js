@@ -5,7 +5,7 @@ import {
     MOBILE_WIDTH,
     TABLET_FONT_SIZE,
     DESKTOP_FONT_SIZE
- } from "../../config/constants";
+ } from "../../assets/themes/sizeConstants";
 
 export const HeaderStyled = styled.nav`
     width: 100%;

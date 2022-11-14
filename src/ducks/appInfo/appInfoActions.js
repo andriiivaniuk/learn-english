@@ -2,6 +2,8 @@ import axios from 'axios';
 
 export const GET_CURRENT_WORD_INFO = "GET_CURRENT_WORD_INFO";
 export const SET_USER_LANGUGAGE = "SET_USER_LANGUGAGE";
+export const SELECT_MAIN_MODE = "SELECT_MAIN_MODE";
+export const RESET_MAIN_MODE = "RESET_MAIN_MODE";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -33,5 +35,18 @@ export const setUserLanguage = (lang) => {
     return {
         type: SET_USER_LANGUGAGE,
         payload: lang
+    }
+}
+
+export const selectMainMode = (mode) => {
+    return {
+        type: SELECT_MAIN_MODE,
+        payload: mode
+    }
+}
+
+export const resetMainMode = () => {
+    return {
+        type: RESET_MAIN_MODE
     }
 }

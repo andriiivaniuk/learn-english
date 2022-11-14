@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 import { DESIGN_CONST } from "../../assets/themes/designConstants";
 
+import { 
+    DESKTOP_FONT_SIZE,
+    TABLET_FONT_SIZE,
+    MOBILE_FONT_SIZE
+} from "../../assets/themes/sizeConstants";
+
 export const ModalBackground = styled.div`
     position: absolute;
     top: ${props => props.top}px;
@@ -43,4 +49,14 @@ export const CloseBtn = styled.img`
     display: block;
     height: 100%;
     width: 100%;
+`
+
+export const ModalContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+`
+
+export const ModalTitle = styled.span`
+    font-size: ${DESKTOP_FONT_SIZE * 2};
 `

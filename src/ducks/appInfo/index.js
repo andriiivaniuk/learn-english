@@ -1,6 +1,8 @@
 import {
     getCurrentWordInfo,
-    setUserLanguage
+    setUserLanguage,
+    resetMainMode,
+    selectMainMode
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -9,5 +11,7 @@ export {
     appInfoReducer,
 
     getCurrentWordInfo,
-    setUserLanguage
+    setUserLanguage,
+    resetMainMode,
+    selectMainMode
 };

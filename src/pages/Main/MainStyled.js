@@ -6,7 +6,7 @@ import {
     TABLET_FONT_SIZE,
     TABLET_WIDTH,
     DESKTOP_FONT_SIZE
-} from "../../config/constants";
+} from "../../assets/themes/sizeConstants";
 
 import { DESIGN_CONST } from "../../assets/themes/designConstants";
 
