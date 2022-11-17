@@ -72,5 +72,8 @@ export const TitleDevider = styled.div`
 `
 
 export const ModalSettings = styled.span`
-    
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
 `

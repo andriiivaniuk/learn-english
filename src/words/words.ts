@@ -4,19 +4,20 @@ export interface Iword {
     speechPart: EspeechPart,
     translationUkr: string,
     translationRus: string,
-    difficulty: EdifficultyLevel
+    difficulty: EdifficultyLevel,
+    themes: string[]
 }
 
 export enum EspeechPart {
-    Noun = 0,
-    Adjective = 1,
-    Verb = 2
+    Noun = "Noun",
+    Adjective = "Adjective",
+    Verb = "Verb"
 }
 
 export enum EdifficultyLevel {
-    Easy = 0,
-    Medium = 1,
-    Hard = 2
+    Easy = "Easy",
+    Medium = "Medium",
+    Hard = "Hard"
 }
 
 export const words: Iword[] = [
@@ -26,7 +27,8 @@ export const words: Iword[] = [
         word: "cat",
         translationUkr: "кіт",
         translationRus: "кот",
-        difficulty: EdifficultyLevel.Easy
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["animals", "pets"]
     },
     {
         id: 1, 
@@ -34,7 +36,8 @@ export const words: Iword[] = [
         word: "nut",
         translationUkr: "горіх",
         translationRus: "орех",
-        difficulty: EdifficultyLevel.Easy
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["food"]
     },
     {
         id: 2,
@@ -42,7 +45,8 @@ export const words: Iword[] = [
         word: "to create",
         translationUkr: "створювати",
         translationRus: "создавать",
-        difficulty: EdifficultyLevel.Easy
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["activities"]
     },
     {
         id: 3,
@@ -50,7 +54,17 @@ export const words: Iword[] = [
         word: "confident",
         translationRus: "уверенный",
         translationUkr: "впевнений",
-        difficulty: EdifficultyLevel.Medium
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["character traits"]
+    },
+    {
+        id: 4,
+        speechPart: EspeechPart.Adjective,
+        word: "picky",
+        translationRus: "придирчивый",
+        translationUkr: "вибагливий",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["character traits"]
     }
 ];
 

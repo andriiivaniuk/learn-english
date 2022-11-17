@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <HeaderStyled>
             <HeaderContent>
-                header 
+                LearnSome
                 <LangDropDown />
             </HeaderContent>
             

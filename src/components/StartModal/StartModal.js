@@ -6,6 +6,13 @@ import { resetMainMode } from "../../ducks/appInfo";
 
 import closeCross from "./../../assets/images/closeCross.svg"
 
+import CheckList from "../CheckList/CheckList";
+
+import { 
+    EdifficultyLevel, 
+    EspeechPart 
+} from "../../words/words.ts";
+
 import { disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
 
 import { 
@@ -21,6 +28,7 @@ import {
 
 import { StartModalTexts } from "./StartModalTexts";
 
+const {diffLevels, speechParts} = getEnumVals()
 
 function StartModal({setModalVisibility}) {
 
@@ -78,7 +86,12 @@ function StartModal({setModalVisibility}) {
                     </ModalTitle>
                     <TitleDevider />
                     <ModalSettings>
-
+                        <CheckList
+                            title={StartModalTexts.SpeechPart[lang]}
+                            options={speechParts} />
+                        <CheckList
+                            title={StartModalTexts.Diffuculty[lang]}
+                            options={diffLevels} />
                     </ModalSettings>
                 </ModalContentWrapper>
 
@@ -89,3 +102,11 @@ function StartModal({setModalVisibility}) {
 }
 
 export default StartModal;
+
+
+function getEnumVals() {
+    let difficulties = Object.keys(EdifficultyLevel);
+    let speech = Object.keys(EspeechPart);
+
+    return {diffLevels: difficulties, speechParts: speech};
+}

@@ -11,5 +11,15 @@ export const StartModalTexts = {
             ru: "Выберите настройки теста"
         }
         
+    },
+    SpeechPart: {
+        en: "Speech Parts",
+        ua: "Частини мови",
+        ru: "Части речи"
+    },
+    Diffuculty: {
+        en: "Difficulty",
+        ua: "Складність слів",
+        ru: "Сложность слов"
     }
 }
