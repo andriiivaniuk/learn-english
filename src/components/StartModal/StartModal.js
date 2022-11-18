@@ -8,6 +8,8 @@ import closeCross from "./../../assets/images/closeCross.svg"
 
 import CheckList from "../CheckList/CheckList";
 
+import AmountSelect from "../AmountSelect/AmountSelect";
+
 import { 
     EdifficultyLevel, 
     EspeechPart,
@@ -96,7 +98,13 @@ function StartModal({setModalVisibility}) {
                         <CheckList
                             title={StartModalTexts.Themes[lang]}
                             options={allWordThemes}
-                            alreadySelected = {true} />
+                            alreadySelected={true} />
+                        <AmountSelect
+                            title = {StartModalTexts.Amount[lang]}
+                            min = {1}
+                            max = {10}>
+                            
+                        </AmountSelect>
                     </ModalSettings>
                 </ModalContentWrapper>
 

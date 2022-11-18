@@ -26,5 +26,10 @@ export const StartModalTexts = {
         en: "Word themes",
         ua: "Тематика слів",
         ru: "Тематика слов"
+    },
+    Amount: {
+        en: "Words amount",
+        ua: "Кількість слів",
+        ru: "Количество слов"
     }
 }
