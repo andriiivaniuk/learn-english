@@ -21,5 +21,10 @@ export const StartModalTexts = {
         en: "Difficulty",
         ua: "Складність слів",
         ru: "Сложность слов"
+    },
+    Themes: {
+        en: "Word themes",
+        ua: "Тематика слів",
+        ru: "Тематика слов"
     }
 }

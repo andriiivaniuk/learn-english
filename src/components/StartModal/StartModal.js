@@ -10,7 +10,8 @@ import CheckList from "../CheckList/CheckList";
 
 import { 
     EdifficultyLevel, 
-    EspeechPart 
+    EspeechPart,
+    allWordThemes
 } from "../../words/words.ts";
 
 import { disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
@@ -28,7 +29,7 @@ import {
 
 import { StartModalTexts } from "./StartModalTexts";
 
-const {diffLevels, speechParts} = getEnumVals()
+const {diffLevels, speechParts} = getEnumVals();
 
 function StartModal({setModalVisibility}) {
 
@@ -92,6 +93,10 @@ function StartModal({setModalVisibility}) {
                         <CheckList
                             title={StartModalTexts.Diffuculty[lang]}
                             options={diffLevels} />
+                        <CheckList
+                            title={StartModalTexts.Themes[lang]}
+                            options={allWordThemes}
+                            alreadySelected = {true} />
                     </ModalSettings>
                 </ModalContentWrapper>
 

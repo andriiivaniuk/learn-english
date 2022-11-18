@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { 
     CheckListStyled,
     CheckListTitle,
@@ -9,9 +9,15 @@ import {
     OptionName
 } from "./CheckListStyled";
 
-function CheckList({title, options}) {
+function CheckList({title, options, alreadySelected = false}) {
 
     const [selectedOptions, setSelectedOptions] = useState([]); 
+    
+    useEffect(() => {
+        if (alreadySelected) {
+            setSelectedOptions([...options]);
+        }
+    }, [])
 
     const handleOptionClick = (option) => {
         let arr = selectedOptions;

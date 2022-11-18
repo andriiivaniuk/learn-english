@@ -65,7 +65,25 @@ export const words: Iword[] = [
         translationUkr: "вибагливий",
         difficulty: EdifficultyLevel.Hard,
         themes: ["character traits"]
-    }
+    },
+    {
+        id: 5,
+        speechPart: EspeechPart.Verb,
+        word: "to resolve",
+        translationUkr: "розв'язувати",
+        translationRus: "решать",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["activities"]
+    },
+    {
+        id: 6,
+        speechPart: EspeechPart.Noun,
+        word: "closure",
+        translationUkr: "замикання",
+        translationRus: "замыкание",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["tech", "IT"]
+    },
 ];
 
 export const allPossibleNouns: Iword[] = words.filter(
@@ -76,3 +94,12 @@ export const allPossibleAdjectives: Iword[] = words.filter(
 
 export const allPossibleVerbs: Iword[] = words.filter(
     word => word.speechPart === EspeechPart.Verb);
+
+let wordThemes = new Set();
+words.forEach((word) => {
+    word.themes.forEach((theme) => {
+        wordThemes.add(theme);
+    });
+})
+
+export const allWordThemes: string[] = [...wordThemes] as string[];
