@@ -1,4 +1,9 @@
 import { useEffect, useState } from "react";
+
+import { useDispatch } from "react-redux";
+
+import { setModalSettings } from "../../ducks/appInfo";
+
 import { 
     CheckListStyled,
     CheckListTitle,
@@ -9,15 +14,21 @@ import {
     OptionName
 } from "./CheckListStyled";
 
-function CheckList({title, options, alreadySelected = false}) {
+function CheckList({title, options, storeSelector, alreadySelected = false}) {
 
     const [selectedOptions, setSelectedOptions] = useState([]); 
+    const dispatch = useDispatch();
     
     useEffect(() => {
         if (alreadySelected) {
             setSelectedOptions([...options]);
         }
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        dispatch(setModalSettings({setting: storeSelector, value: selectedOptions}));
+        
+    }, [selectedOptions]);
 
     const handleOptionClick = (option) => {
         let arr = selectedOptions;

@@ -16,7 +16,11 @@ const getInitialStore = () => {
             currentWord: null,
             currentWordData: null,
             results: null,
-            userLanguage: "ua"
+            userLanguage: "ua",
+            modalSpeechParts: [],
+            modalDiffLevels: [],
+            modalAllWordThemes: [],
+            modalSelectedWordsArr: []
         }
     }
 }

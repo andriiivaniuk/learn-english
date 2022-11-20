@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { resetMainMode } from "../../ducks/appInfo";
+import { clearModalSettings, resetMainMode } from "../../ducks/appInfo";
 
 import closeCross from "./../../assets/images/closeCross.svg"
 
@@ -53,6 +53,7 @@ function StartModal({setModalVisibility}) {
         window.removeEventListener("resize", resizeListener);
         setModalVisibility(false);
         dispatch(resetMainMode());
+        dispatch(clearModalSettings());
     }
 
     useEffect(() => {
@@ -91,19 +92,21 @@ function StartModal({setModalVisibility}) {
                     <ModalSettings>
                         <CheckList
                             title={StartModalTexts.SpeechPart[lang]}
-                            options={speechParts} />
+                            options={speechParts}
+                            storeSelector = {"modalSpeechParts"}
+                            alreadySelected={true} />
                         <CheckList
                             title={StartModalTexts.Diffuculty[lang]}
-                            options={diffLevels} />
+                            options={diffLevels}
+                            storeSelector = {"modalDiffLevels"} />
                         <CheckList
                             title={StartModalTexts.Themes[lang]}
                             options={allWordThemes}
-                            alreadySelected={true} />
+                            storeSelector = {"modalAllWordThemes"}
+                            alreadySelected={true}
+                            />
                         <AmountSelect
-                            title = {StartModalTexts.Amount[lang]}
-                            min = {1}
-                            max = {10}>
-                            
+                            title = {StartModalTexts.Amount[lang]}>
                         </AmountSelect>
                     </ModalSettings>
                 </ModalContentWrapper>

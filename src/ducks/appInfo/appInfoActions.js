@@ -4,6 +4,10 @@ export const GET_CURRENT_WORD_INFO = "GET_CURRENT_WORD_INFO";
 export const SET_USER_LANGUGAGE = "SET_USER_LANGUGAGE";
 export const SELECT_MAIN_MODE = "SELECT_MAIN_MODE";
 export const RESET_MAIN_MODE = "RESET_MAIN_MODE";
+export const SET_MODAL_SETTING = "SET_MODAL_SETTING";
+export const CLEAR_MODAL_SETTINGS = "CLEAR_MODAL_SETTINGS";
+export const SET_MODAL_SELECTED_WORDS = "SET_MODAL_SELECTED_WORDS";
+export const CLEAR_MODAL_SELECTED_WORDS = "CLEAR_MODAL_SELECTED_WORDS";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -48,5 +52,31 @@ export const selectMainMode = (mode) => {
 export const resetMainMode = () => {
     return {
         type: RESET_MAIN_MODE
+    }
+}
+
+export const setModalSettings = ({setting, value}) => {
+    return {
+        type: SET_MODAL_SETTING,
+        payload: {setting: setting, value: value}
+    }
+}
+
+export const clearModalSettings = () => {
+    return {
+        type: CLEAR_MODAL_SETTINGS
+    }
+}
+
+export const setModalSelectedWords = (wordsArr) => {
+    return {
+        type: SET_MODAL_SELECTED_WORDS,
+        payload: wordsArr
+    }
+}
+
+export const clearModalSelectedWords = () => {
+    return {
+        type: CLEAR_MODAL_SELECTED_WORDS
     }
 }

@@ -2,7 +2,11 @@ import {
     getCurrentWordInfo,
     setUserLanguage,
     resetMainMode,
-    selectMainMode
+    selectMainMode,
+    setModalSettings,
+    clearModalSettings,
+    setModalSelectedWords,
+    clearModalSelectedWords
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -13,5 +17,9 @@ export {
     getCurrentWordInfo,
     setUserLanguage,
     resetMainMode,
-    selectMainMode
+    selectMainMode,
+    setModalSettings,
+    clearModalSettings,
+    setModalSelectedWords,
+    clearModalSelectedWords
 };

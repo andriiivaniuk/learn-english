@@ -38,3 +38,9 @@ export const ArrowImg = styled.img`
 export const AmountValue = styled.span`
     font-size: 2em;
 `
+
+export const MaxAmount = styled.span`
+    display: flex;
+    justify-content: center;
+
+`
