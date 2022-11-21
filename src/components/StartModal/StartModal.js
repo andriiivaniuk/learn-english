@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import {useNavigate} from "react-router-dom"
+
 import { clearModalSettings, resetMainMode } from "../../ducks/appInfo";
 
 import closeCross from "./../../assets/images/closeCross.svg"
@@ -26,7 +28,8 @@ import {
     ModalContentWrapper,
     ModalTitle,
     ModalSettings,
-    TitleDevider
+    TitleDevider,
+    StartButton
 } from "./StartModalStyled";
 
 import { StartModalTexts } from "./StartModalTexts";
@@ -36,13 +39,16 @@ const {diffLevels, speechParts} = getEnumVals();
 function StartModal({setModalVisibility}) {
 
     const lang = useSelector(state => state.appInfo.userLanguage);
+    const currentWords = useSelector(state => state.appInfo.modalSelectedWordsArr)
     const dispatch = useDispatch();
     const mode = useSelector(state => state.appInfo.mode);
     const [topOffset, setTopOffset] 
     = useState(Math.abs(document.querySelector("body").getBoundingClientRect().top));
+    const navigate = useNavigate();
 
     const keyboardListener = (e) => {
         if (e.key === "Escape") {
+            dispatch(resetMainMode());
             closeModal();
         }
     }
@@ -52,7 +58,6 @@ function StartModal({setModalVisibility}) {
         document.removeEventListener("keydown", keyboardListener);
         window.removeEventListener("resize", resizeListener);
         setModalVisibility(false);
-        dispatch(resetMainMode());
         dispatch(clearModalSettings());
     }
 
@@ -68,11 +73,20 @@ function StartModal({setModalVisibility}) {
 
     function closeModalByClick(e) {
         if (e.target?.id === "modalBackground" || e.target?.id === "modalCloseBtn") {
+            dispatch(resetMainMode());
             closeModal();
             e.stopPropagation();
         }
     }
 
+    function handleStartClick () {
+        if (currentWords.length === 0) {
+            return;
+        } else {
+            closeModal()
+            navigate(mode);
+        }
+    }
 
     return ( 
         <ModalBackground
@@ -109,6 +123,9 @@ function StartModal({setModalVisibility}) {
                             title = {StartModalTexts.Amount[lang]}>
                         </AmountSelect>
                     </ModalSettings>
+                    <StartButton onClick={handleStartClick} >
+                        {StartModalTexts.StartButton[mode][lang]}
+                    </StartButton>
                 </ModalContentWrapper>
 
             </ModalContainer>

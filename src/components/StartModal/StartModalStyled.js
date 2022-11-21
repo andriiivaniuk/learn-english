@@ -58,6 +58,7 @@ export const ModalContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    align-items: center;
 `
 
 export const ModalTitle = styled.span`
@@ -75,5 +76,21 @@ export const ModalSettings = styled.span`
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
+    justify-content: center;
 
+`
+export const StartButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    font-size: ${DESKTOP_FONT_SIZE * 2};
+
+    height: 120px;
+    width: 200px;
+    background-color: ${DESIGN_CONST.button.bgColor};
+    border: 3px solid ${DESIGN_CONST.button.borderColor};
+    border-radius: 13px;
+    cursor: pointer;
 `

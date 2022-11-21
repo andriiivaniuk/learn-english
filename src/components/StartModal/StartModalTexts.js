@@ -31,5 +31,17 @@ export const StartModalTexts = {
         en: "Words amount",
         ua: "Кількість слів",
         ru: "Количество слов"
+    },
+    StartButton: {
+        learn: {
+            en: "Begin learning",
+            ua: "Почати вивчення",
+            ru: "Начать изучение"
+        },
+        test: {
+            en: "Begin test",
+            ua: "Почати тест",
+            ru: "Начать тест"
+        }
     }
 }

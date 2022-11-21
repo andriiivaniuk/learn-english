@@ -84,6 +84,71 @@ export const words: Iword[] = [
         difficulty: EdifficultyLevel.Medium,
         themes: ["tech", "IT"]
     },
+    {
+        id: 7,
+        speechPart: EspeechPart.Noun,
+        word: "meeting",
+        translationUkr: "зустріч",
+        translationRus: "встреча",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["tech", "IT"]
+    },
+    {
+        id: 8,
+        speechPart: EspeechPart.Verb,
+        word: "to crave",
+        translationUkr: "жадати",
+        translationRus: "вожделеть",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["emotions"]
+    },
+    {
+        id: 9,
+        speechPart: EspeechPart.Verb,
+        word: "to demolish",
+        translationUkr: "руйнувати",
+        translationRus: "сносить",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["activities", "industry"]
+    },
+    {
+        id: 10,
+        speechPart: EspeechPart.Adjective,
+        word: "weird",
+        translationUkr: "дивний",
+        translationRus: "странный",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["character traits"]
+    },
+    {
+        id: 11,
+        speechPart: EspeechPart.Adjective,
+        word: "playful",
+        translationUkr: "грайливий",
+        translationRus: "игривый",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["character traits"]
+    },
+    {
+        id: 12,
+        speechPart: EspeechPart.Noun,
+        word: "collar",
+        translationUkr: "ошийник",
+        translationRus: "ошейник",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["pets"]
+    },
+    {
+        id: 13,
+        speechPart: EspeechPart.Adjective,
+        word: "inevitable",
+        translationUkr: "невідворотній",
+        translationRus: "неотвратимый",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["other"]
+    },
+
+
 ];
 
 export const allPossibleNouns: Iword[] = words.filter(
