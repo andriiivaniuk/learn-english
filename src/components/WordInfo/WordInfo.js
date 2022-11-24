@@ -1,11 +1,14 @@
 import { WordInfoStyled } from "./WordInfoStyled";
 
-function WordInfo() {
+import withLoader from "../../hocs/withLoader/withLoader";
+
+function WordInfo({wordData, wordObj}) {
     return ( 
         <WordInfoStyled>
-            
+            {wordData.phonetic}
+            {wordData.meanings[0].definitions[0].definition}
         </WordInfoStyled>
     );
 }
 
-export default WordInfo;
+export default withLoader(WordInfo);

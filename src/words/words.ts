@@ -42,7 +42,7 @@ export const words: Iword[] = [
     {
         id: 2,
         speechPart: EspeechPart.Verb,
-        word: "to create",
+        word: "create",
         translationUkr: "створювати",
         translationRus: "создавать",
         difficulty: EdifficultyLevel.Easy,
@@ -69,7 +69,7 @@ export const words: Iword[] = [
     {
         id: 5,
         speechPart: EspeechPart.Verb,
-        word: "to resolve",
+        word: "resolve",
         translationUkr: "розв'язувати",
         translationRus: "решать",
         difficulty: EdifficultyLevel.Medium,
@@ -96,7 +96,7 @@ export const words: Iword[] = [
     {
         id: 8,
         speechPart: EspeechPart.Verb,
-        word: "to crave",
+        word: "crave",
         translationUkr: "жадати",
         translationRus: "вожделеть",
         difficulty: EdifficultyLevel.Hard,
@@ -105,7 +105,7 @@ export const words: Iword[] = [
     {
         id: 9,
         speechPart: EspeechPart.Verb,
-        word: "to demolish",
+        word: "demolish",
         translationUkr: "руйнувати",
         translationRus: "сносить",
         difficulty: EdifficultyLevel.Medium,

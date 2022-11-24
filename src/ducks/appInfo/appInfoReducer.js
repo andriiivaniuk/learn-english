@@ -14,7 +14,7 @@ const appInfoReducer = ( state = {}, action) => {
         case GET_CURRENT_WORD_INFO:
             return {
                 ...state,
-                currentWordData: action.payload
+                currentWordData: action.payload[0]
             }
 
         case SET_USER_LANGUGAGE:

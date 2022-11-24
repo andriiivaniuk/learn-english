@@ -1,4 +1,5 @@
 import {
+    fetchWordInfo,
     getCurrentWordInfo,
     setUserLanguage,
     resetMainMode,
@@ -14,6 +15,7 @@ import appInfoReducer from "./appInfoReducer";
 export {
     appInfoReducer,
 
+    fetchWordInfo,
     getCurrentWordInfo,
     setUserLanguage,
     resetMainMode,
