@@ -1,3 +1,5 @@
+import { scrambleArr } from "../utils/utils.ts";
+
 export interface Iword {
     id: number,
     word: string,
@@ -168,3 +170,19 @@ words.forEach((word) => {
 })
 
 export const allWordThemes: string[] = [...wordThemes] as string[];
+
+
+const wordTranslationsRus: Set<string> = new Set();
+const wordTranslationsUkr: Set<string> = new Set();
+words.forEach((word) => {
+    wordTranslationsUkr.add(word.translationUkr);
+    wordTranslationsRus.add(word.translationRus);
+});
+
+const allWordTranslationsRus: string[] = scrambleArr([...wordTranslationsRus] as string[]);
+const allWordTranslationsUkr: string[] = scrambleArr([...wordTranslationsUkr] as string[]);
+
+export const allWordTranslations: Object = {
+    ua: allWordTranslationsUkr,
+    ru: allWordTranslationsRus
+}
