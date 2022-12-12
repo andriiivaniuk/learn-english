@@ -6,7 +6,13 @@ import { fetchWordInfo } from "../../ducks/appInfo";
 
 import WordInfo from "../../components/WordInfo/WordInfo";
 
-import { TestStyled, NextButton } from "./TestStyled";
+import { 
+    TestStyled,
+    NextButton,
+    Option,
+    OoptionsArea,
+    WordNum
+} from "./TestStyled";
 
 import { scrambleArr, getAnswers} from "../../utils/utils.ts";
 
@@ -20,6 +26,7 @@ function Test() {
     const [currentAnswers, setCurrentAnswers] = useState([]);
 
     const [loading, setLoading] = useState(true);
+    const [wordNum, setWordNum] = useState(1);
 
     useEffect(() => {
         if (currentWordData) {
@@ -43,13 +50,16 @@ function Test() {
 
     const handleNextClick = () => {
         setLoading(true);
-        //formAnswersArr();
         dispatch(fetchWordInfo(testWords[currentIndex + 1].word));
         setCurrentIndex(currentIndex + 1);
+        setWordNum(wordNum + 1);
     }
 
     return ( 
         <TestStyled>
+            <WordNum>
+                Word № {wordNum} out of {testWords.length}
+            </WordNum>
             {
                 <WordInfo 
                     loading = {loading}
@@ -60,7 +70,13 @@ function Test() {
             <NextButton onClick={handleNextClick}>
                 Next
             </NextButton>
-            {currentAnswers.map(answer => <p>{answer}</p>)}
+            {!loading &&
+                <OoptionsArea>
+                    {currentAnswers.map(answer =>
+                        <Option key={answer}>{answer}</Option>
+                    )}
+                </OoptionsArea>
+            }
         </TestStyled> 
     );
 }

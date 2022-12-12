@@ -28,3 +28,7 @@ export const HeaderContent = styled.div`
     padding: 1rem 2rem;
     max-width: ${MAX_SITE_CONTENT}px;
 `
+
+export const LogoLink = styled.a`
+    
+`
