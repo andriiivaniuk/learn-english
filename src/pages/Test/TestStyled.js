@@ -18,7 +18,7 @@ export const NextButton = styled.button`
     align-items: center;
 `
 
-export const OoptionsArea = styled.div`
+export const OptionsArea = styled.div`
     display: flex;
     justify-content: space-between;
 `   
@@ -27,7 +27,10 @@ export const Option = styled.span`
     padding: 1rem;
     border-radius: 15px;
     border: 3px solid ${DESIGN_CONST.button.borderColor};
-    background-color: ${DESIGN_CONST.button.bgColor};
+    background-color: ${props => 
+        props.isHighlight ? 
+        props.isRight ? "green" : "red" 
+        :  DESIGN_CONST.button.bgColor};
     cursor: pointer;
 `
 

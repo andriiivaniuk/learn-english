@@ -6,8 +6,10 @@ import {
     SET_MODAL_SETTING,
     CLEAR_MODAL_SETTINGS,
     CLEAR_MODAL_SELECTED_WORDS,
-    SET_MODAL_SELECTED_WORDS
- } from "./appInfoActions";
+    SET_MODAL_SELECTED_WORDS,
+    INCREMENT_RIGHT_ANSWERS,
+    INCREMENT_WRONG_ANSWERS
+} from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
     switch (action.type) {
@@ -59,6 +61,16 @@ const appInfoReducer = ( state = {}, action) => {
             return {
                 ...state,
                 modalSelectedWordsArr: []
+            }
+        case INCREMENT_RIGHT_ANSWERS:
+            return {
+                ...state,
+                rightAnswers: state.rightAnswers + 1
+            }
+        case INCREMENT_WRONG_ANSWERS:
+            return {
+                ...state,
+                wrongAnswers: state.wrongAnswers + 1
             }
 
         default:

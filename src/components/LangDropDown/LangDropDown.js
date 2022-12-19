@@ -20,9 +20,11 @@ function LangDropDown() {
 
     const currentLang = useSelector(state => state.appInfo.userLanguage);
     const [isOptionsShown, setIsOptionsShown] = useState(false);
+    const mode = useSelector(state => state.appInfo.mode);
     const dispatch = useDispatch();
 
     return (  
+        mode !== "test"  &&
         <LangDropDownStyled onClick={() => {setIsOptionsShown(!isOptionsShown)}}>
             <SelectedLang>
                 {currentLang}

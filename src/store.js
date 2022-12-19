@@ -20,7 +20,9 @@ const getInitialStore = () => {
             modalSpeechParts: [],
             modalDiffLevels: [],
             modalAllWordThemes: [],
-            modalSelectedWordsArr: []
+            modalSelectedWordsArr: [],
+            rightAnswers: 0,
+            wrongAnswers: 0
         }
     }
 }

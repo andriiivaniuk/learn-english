@@ -8,6 +8,8 @@ export const SET_MODAL_SETTING = "SET_MODAL_SETTING";
 export const CLEAR_MODAL_SETTINGS = "CLEAR_MODAL_SETTINGS";
 export const SET_MODAL_SELECTED_WORDS = "SET_MODAL_SELECTED_WORDS";
 export const CLEAR_MODAL_SELECTED_WORDS = "CLEAR_MODAL_SELECTED_WORDS";
+export const INCREMENT_RIGHT_ANSWERS = "INCREMENT_RIGHT_ANSWERS";
+export const INCREMENT_WRONG_ANSWERS = "INCREMENT_WRONG_ANSWERS";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -78,5 +80,17 @@ export const setModalSelectedWords = (wordsArr) => {
 export const clearModalSelectedWords = () => {
     return {
         type: CLEAR_MODAL_SELECTED_WORDS
+    }
+}
+
+export const incrementRightAnswers = () => {
+    return {
+        type: INCREMENT_RIGHT_ANSWERS
+    }
+}
+
+export const incrementWrongAnswers = () => {
+    return {
+        type: INCREMENT_WRONG_ANSWERS
     }
 }

@@ -7,7 +7,9 @@ import {
     setModalSettings,
     clearModalSettings,
     setModalSelectedWords,
-    clearModalSelectedWords
+    clearModalSelectedWords,
+    incrementRightAnswers,
+    incrementWrongAnswers
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -23,5 +25,7 @@ export {
     setModalSettings,
     clearModalSettings,
     setModalSelectedWords,
-    clearModalSelectedWords
+    clearModalSelectedWords,
+    incrementRightAnswers,
+    incrementWrongAnswers
 };
