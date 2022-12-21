@@ -90,9 +90,6 @@ function Test() {
                     wordObj = {testWords[currentIndex]} 
                 />
             }
-            <NextButton onClick={handleNextClick}>
-                Next
-            </NextButton>
             {!loading &&
                 <OptionsArea>
                     {currentAnswers.map(answer =>
@@ -107,6 +104,9 @@ function Test() {
                     )}
                 </OptionsArea>
             }
+            {isAnswered && <NextButton onClick={handleNextClick}>
+                Next
+            </NextButton>}
         </TestStyled> 
     );
 }
