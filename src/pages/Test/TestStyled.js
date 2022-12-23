@@ -59,6 +59,7 @@ export const Option = styled.span`
 `
 
 export const WordNum = styled.span`
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 `
