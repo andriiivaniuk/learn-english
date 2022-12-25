@@ -15,6 +15,7 @@ const getInitialStore = () => {
             mode: null,
             currentWord: null,
             currentWordData: null,
+            currentPictureData: null,
             results: null,
             userLanguage: "ua",
             modalSpeechParts: [],

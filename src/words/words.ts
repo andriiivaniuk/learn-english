@@ -149,6 +149,33 @@ export const words: Iword[] = [
         difficulty: EdifficultyLevel.Hard,
         themes: ["other"]
     },
+    {
+        id: 14,
+        speechPart: EspeechPart.Noun,
+        word: "bottle",
+        translationUkr: "пляшка",
+        translationRus: "бутылка",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
+    },
+    {
+        id: 15,
+        speechPart: EspeechPart.Adjective,
+        word: "peculiar",
+        translationUkr: "дивний",
+        translationRus: "странный",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["character traits"]
+    },
+    {
+        id: 16,
+        speechPart: EspeechPart.Adjective,
+        word: "random",
+        translationUkr: "випадковий",
+        translationRus: "случайный",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["other"]
+    }
 
 
 ];

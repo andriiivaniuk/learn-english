@@ -8,7 +8,9 @@ import {
     CLEAR_MODAL_SELECTED_WORDS,
     SET_MODAL_SELECTED_WORDS,
     INCREMENT_RIGHT_ANSWERS,
-    INCREMENT_WRONG_ANSWERS
+    INCREMENT_WRONG_ANSWERS,
+    GET_CURRENT_PICTURE_DATA,
+    CLEAR_CURRENT_PICTURE_DATA
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -72,7 +74,17 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 wrongAnswers: state.wrongAnswers + 1
             }
-
+        case GET_CURRENT_PICTURE_DATA:
+            console.log(action.payload);
+            return {
+                ...state,
+                currentPictureData: action.payload
+            }
+        case CLEAR_CURRENT_PICTURE_DATA:
+            return {
+                ...state,
+                currentPictureData: null
+            }
         default:
             return state;
     }

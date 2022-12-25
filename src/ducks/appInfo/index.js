@@ -9,7 +9,10 @@ import {
     setModalSelectedWords,
     clearModalSelectedWords,
     incrementRightAnswers,
-    incrementWrongAnswers
+    incrementWrongAnswers,
+    getCurrentPictureData,
+    searchImages,
+    clearCurrentPictureData
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -27,5 +30,8 @@ export {
     setModalSelectedWords,
     clearModalSelectedWords,
     incrementRightAnswers,
-    incrementWrongAnswers
+    incrementWrongAnswers,
+    getCurrentPictureData,
+    searchImages,
+    clearCurrentPictureData
 };

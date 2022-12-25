@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { 
     fetchWordInfo,
     incrementRightAnswers,
-    incrementWrongAnswers 
+    incrementWrongAnswers,
+    clearCurrentPictureData
 } from "../../ducks/appInfo";
 
 import WordInfo from "../../components/WordInfo/WordInfo";
@@ -19,6 +20,7 @@ import {
 } from "./TestStyled";
 
 import { scrambleArr, getAnswers} from "../../utils/utils.ts";
+import Picture from "../../components/Picture/Picture";
 
 
 function Test() {
@@ -58,6 +60,7 @@ function Test() {
     const handleNextClick = () => {
         setLoading(true);
         dispatch(fetchWordInfo(testWords[currentIndex + 1].word));
+        dispatch(clearCurrentPictureData());
         setCurrentIndex(currentIndex + 1);
         setWordNum(wordNum + 1);
 
@@ -89,6 +92,9 @@ function Test() {
                     wordData = {currentWordData}
                     wordObj = {testWords[currentIndex]} 
                 />
+            }
+            {
+                !loading && <Picture word = {currentWordData.word} />
             }
             {!loading &&
                 <OptionsArea>

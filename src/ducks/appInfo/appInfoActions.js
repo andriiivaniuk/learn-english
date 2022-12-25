@@ -10,6 +10,8 @@ export const SET_MODAL_SELECTED_WORDS = "SET_MODAL_SELECTED_WORDS";
 export const CLEAR_MODAL_SELECTED_WORDS = "CLEAR_MODAL_SELECTED_WORDS";
 export const INCREMENT_RIGHT_ANSWERS = "INCREMENT_RIGHT_ANSWERS";
 export const INCREMENT_WRONG_ANSWERS = "INCREMENT_WRONG_ANSWERS";
+export const GET_CURRENT_PICTURE_DATA = "GET_CURRENT_PICTURE_DATA";
+export const CLEAR_CURRENT_PICTURE_DATA = "CLEAR_CURRENT_PICTURE_DATA";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -92,5 +94,42 @@ export const incrementRightAnswers = () => {
 export const incrementWrongAnswers = () => {
     return {
         type: INCREMENT_WRONG_ANSWERS
+    }
+}
+
+export const getCurrentPictureData = (data) => {
+    return {
+        type: GET_CURRENT_PICTURE_DATA,
+        payload: data
+    }
+}
+
+export const searchImages = (word) => {
+    return dispatch => {
+        const options = {
+            method: 'GET',
+            url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
+            params: { q: `${word}`, pageNumber: '1', pageSize: '5', autoCorrect: 'true' },
+            headers: {
+                'X-RapidAPI-Key': '57eb5ebecamsh83e097d8da5d937p1e7899jsna3c7224658e4',
+                'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
+            }
+        };
+        axios.
+            request(options)
+            .then(result => {
+                console.log(result);
+                dispatch(getCurrentPictureData(result.data));
+            })
+            .catch(error => {
+                alert(error.response.data.message);
+            })
+
+    }
+}
+
+export const clearCurrentPictureData = () => {
+    return {
+        type: CLEAR_CURRENT_PICTURE_DATA
     }
 }
