@@ -4,7 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 
 import {useNavigate} from "react-router-dom"
 
-import { clearModalSettings, resetMainMode } from "../../ducks/appInfo";
+import {
+    clearModalSettings,
+    resetMainMode,
+    setModalSelectedWords,
+    setUserStartedTest
+} from "../../ducks/appInfo";
 
 import closeCross from "./../../assets/images/closeCross.svg"
 
@@ -38,6 +43,7 @@ const {diffLevels, speechParts} = getEnumVals();
 
 function StartModal({setModalVisibility}) {
 
+    const customMaxWords = useSelector(state => state.appInfo.modalCustomMax);
     const lang = useSelector(state => state.appInfo.userLanguage);
     const currentWords = useSelector(state => state.appInfo.modalSelectedWordsArr)
     const dispatch = useDispatch();
@@ -83,7 +89,15 @@ function StartModal({setModalVisibility}) {
         if (currentWords.length === 0) {
             return;
         } else {
-            closeModal()
+            dispatch(setUserStartedTest());
+
+            if (customMaxWords !== null) {
+                dispatch(setModalSelectedWords(
+                    currentWords.slice(0, customMaxWords - 1)
+                ));
+            }
+
+            closeModal();
             navigate(mode);
         }
     }

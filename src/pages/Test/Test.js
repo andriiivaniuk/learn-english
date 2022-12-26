@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { useNavigate } from "react-router-dom";
+
 import { 
     fetchWordInfo,
     incrementRightAnswers,
@@ -20,11 +22,16 @@ import {
 } from "./TestStyled";
 
 import { scrambleArr, getAnswers} from "../../utils/utils.ts";
+
 import Picture from "../../components/Picture/Picture";
 
 
 function Test() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const ifUserStartedTest = useSelector(state => state.appInfo.ifUserStartedTest);
+
     const lang = useSelector(state => state.appInfo.userLanguage);
     const testWords = useSelector(state => state.appInfo.modalSelectedWordsArr);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,11 +52,21 @@ function Test() {
     }, [currentWordData]);
 
     useEffect(() => {
+        if (!ifUserStartedTest) {
+            navigate("/");
+            return;
+        }
+
         dispatch(fetchWordInfo(testWords[currentIndex].word));
         formAnswersArr();
     }, []);
 
     function formAnswersArr() {
+        if (!ifUserStartedTest) {
+            navigate("/");
+            return;
+        }
+        
         setCurrentAnswers(
             scrambleArr(
                 [testWords[currentIndex].word,

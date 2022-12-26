@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { useDispatch } from "react-redux";
 
-import { setModalSettings } from "../../ducks/appInfo";
+import { setModalSettings, setModalCustomMaxWords } from "../../ducks/appInfo";
 
 import { 
     CheckListStyled,
@@ -39,6 +39,8 @@ function CheckList({title, options, storeSelector, alreadySelected = false}) {
             arr = arr.filter((presentOption) => presentOption !== option);
             setSelectedOptions([...arr]);
         }
+
+        dispatch(setModalCustomMaxWords(null));
     }
 
     return (

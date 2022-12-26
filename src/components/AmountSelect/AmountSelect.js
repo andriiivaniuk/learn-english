@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { 
     setModalSelectedWords,
-    clearModalSelectedWords
+    clearModalSelectedWords,
+    setModalCustomMaxWords
 } from "../../ducks/appInfo";
 
 import { 
@@ -58,6 +59,8 @@ function AmountSelect({title}) {
         if (!isIncrement && current > 1) {
             setCurrent(current - 1);
         }
+        
+        dispatch(setModalCustomMaxWords(current));
     }
 
     const countPossibleWords = () => {

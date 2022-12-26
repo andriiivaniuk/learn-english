@@ -12,7 +12,9 @@ import {
     incrementWrongAnswers,
     getCurrentPictureData,
     searchImages,
-    clearCurrentPictureData
+    clearCurrentPictureData,
+    setUserStartedTest,
+    setModalCustomMaxWords
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -33,5 +35,7 @@ export {
     incrementWrongAnswers,
     getCurrentPictureData,
     searchImages,
-    clearCurrentPictureData
+    clearCurrentPictureData,
+    setUserStartedTest,
+    setModalCustomMaxWords
 };

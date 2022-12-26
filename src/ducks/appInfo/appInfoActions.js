@@ -12,6 +12,8 @@ export const INCREMENT_RIGHT_ANSWERS = "INCREMENT_RIGHT_ANSWERS";
 export const INCREMENT_WRONG_ANSWERS = "INCREMENT_WRONG_ANSWERS";
 export const GET_CURRENT_PICTURE_DATA = "GET_CURRENT_PICTURE_DATA";
 export const CLEAR_CURRENT_PICTURE_DATA = "CLEAR_CURRENT_PICTURE_DATA";
+export const SET_USET_STARTED_TEST = "SET_USET_STARTED_TEST";
+export const SET_MODAL_CUSTOM_MAX_WORDS = "SET_MODAL_CUSTOM_MAX_WORDS";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -131,5 +133,18 @@ export const searchImages = (word) => {
 export const clearCurrentPictureData = () => {
     return {
         type: CLEAR_CURRENT_PICTURE_DATA
+    }
+}
+
+export const setUserStartedTest = () => {
+    return {
+        type: SET_USET_STARTED_TEST
+    }
+}
+
+export const setModalCustomMaxWords = (max) => {
+    return {
+        type: SET_MODAL_CUSTOM_MAX_WORDS,
+        payload: max
     }
 }

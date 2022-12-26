@@ -22,8 +22,10 @@ const getInitialStore = () => {
             modalDiffLevels: [],
             modalAllWordThemes: [],
             modalSelectedWordsArr: [],
+            modalCustomMax: null,
             rightAnswers: 0,
-            wrongAnswers: 0
+            wrongAnswers: 0,
+            ifUserStartedTest: false
         }
     }
 }

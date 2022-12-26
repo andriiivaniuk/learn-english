@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { 
-    PictureStyled 
+    PictureStyled,
+    Loader,
+    LoaderBack
 } from "./PictureStyled";
 
 import { searchImages } from "../../ducks/appInfo";
@@ -34,7 +36,7 @@ function Picture({word}) {
     }, [currentPictureData]);
 
     return ( 
-            picPresent && <PictureStyled src = {pic} />
+        picPresent ? <PictureStyled src = {pic}/> : <LoaderBack><Loader/></LoaderBack>
     )
 }
 

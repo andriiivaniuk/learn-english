@@ -7,10 +7,12 @@ import {
     CLEAR_MODAL_SETTINGS,
     CLEAR_MODAL_SELECTED_WORDS,
     SET_MODAL_SELECTED_WORDS,
+    SET_MODAL_CUSTOM_MAX_WORDS,
     INCREMENT_RIGHT_ANSWERS,
     INCREMENT_WRONG_ANSWERS,
     GET_CURRENT_PICTURE_DATA,
-    CLEAR_CURRENT_PICTURE_DATA
+    CLEAR_CURRENT_PICTURE_DATA,
+    SET_USET_STARTED_TEST
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -50,7 +52,8 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 modalSpeechParts: [],
                 modalDiffLevels: [],
-                modalAllWordThemes: []
+                modalAllWordThemes: [],
+                modalCustomMax: null
             }
         }
         
@@ -59,6 +62,12 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 modalSelectedWordsArr: action.payload
             }
+        case SET_MODAL_CUSTOM_MAX_WORDS: {
+            return {
+                ...state,
+                modalCustomMax: action.payload
+            }
+        }
         case CLEAR_MODAL_SELECTED_WORDS:
             return {
                 ...state,
@@ -75,7 +84,6 @@ const appInfoReducer = ( state = {}, action) => {
                 wrongAnswers: state.wrongAnswers + 1
             }
         case GET_CURRENT_PICTURE_DATA:
-            console.log(action.payload);
             return {
                 ...state,
                 currentPictureData: action.payload
@@ -84,6 +92,11 @@ const appInfoReducer = ( state = {}, action) => {
             return {
                 ...state,
                 currentPictureData: null
+            }
+        case SET_USET_STARTED_TEST:
+            return {
+                ...state,
+                ifUserStartedTest: true
             }
         default:
             return state;
