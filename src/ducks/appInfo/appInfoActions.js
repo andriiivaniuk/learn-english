@@ -108,14 +108,10 @@ export const getCurrentPictureData = (data) => {
 
 export const searchImages = (word) => {
     return dispatch => {
+        const API_KEY = '24236724-a89ab3fbc60694d0f9dea8e28';
         const options = {
             method: 'GET',
-            url: 'https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI',
-            params: { q: `${word}`, pageNumber: '1', pageSize: '5', autoCorrect: 'true' },
-            headers: {
-                'X-RapidAPI-Key': '57eb5ebecamsh83e097d8da5d937p1e7899jsna3c7224658e4',
-                'X-RapidAPI-Host': 'contextualwebsearch-websearch-v1.p.rapidapi.com'
-            }
+            url: `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${word}&page=${1}&per_page=10&key=${API_KEY}`,
         };
         axios.
             request(options)

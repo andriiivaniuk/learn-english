@@ -31,7 +31,7 @@ function Picture({word}) {
             setPicPresent(false);
         } else {
             setPicPresent(true);
-            setPic(scrambleArr(currentPictureData.value)[0].url)
+            setPic(scrambleArr(currentPictureData.hits)[0].webformatURL);
         }
     }, [currentPictureData]);
 
