@@ -85,6 +85,10 @@ function Test() {
         setIsHighlight(false);
     }
 
+    const handleResultsClick = () => {
+        navigate("/results");
+    }
+
     const checkAnswer = (answer) => {
         if (!isAnswered) {
             if (currentWordData.word === answer) {
@@ -127,9 +131,18 @@ function Test() {
                     )}
                 </OptionsArea>
             }
-            {isAnswered && <NextButton onClick={handleNextClick}>
-                Next
-            </NextButton>}
+            {
+                (isAnswered && (currentIndex < testWords.length - 1)) &&
+                <NextButton onClick={handleNextClick}>
+                    Next
+                </NextButton>
+            }
+            {
+                (isAnswered && (currentIndex === testWords.length - 1)) &&
+                <NextButton onClick={handleResultsClick}>
+                    View results
+                </NextButton>
+            }
         </TestStyled> 
     );
 }
