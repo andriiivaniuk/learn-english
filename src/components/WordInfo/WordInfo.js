@@ -1,4 +1,7 @@
-import { WordInfoStyled } from "./WordInfoStyled";
+import { 
+    WordInfoStyled,
+    PartOfSpeech
+} from "./WordInfoStyled";
 
 import withLoader from "../../hocs/withLoader/withLoader";
 
@@ -7,6 +10,9 @@ function WordInfo({wordData, wordObj}) {
         <WordInfoStyled>
             {/* {wordData.phonetic} */}
             {formDefinition(wordData, wordObj)}
+            <PartOfSpeech>
+                {wordObj.speechPart}
+            </PartOfSpeech>
         </WordInfoStyled>
     );
 }

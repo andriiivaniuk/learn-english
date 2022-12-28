@@ -8,6 +8,7 @@ export const TestStyled = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Manrope';
 `
 
 export const NextButton = styled.button`
@@ -59,7 +60,9 @@ export const Option = styled.span`
 `
 
 export const WordNum = styled.span`
-    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: ${DESIGN_CONST.panel.bgColor};
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 `

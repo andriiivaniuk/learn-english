@@ -6,5 +6,10 @@ export const DESIGN_CONST = {
 
     spinner: {
         spinnerColor: "#1ba7bf",
+    },
+
+    panel: {
+        bgColor: "#74cde2",
+        borderColor: "#94d0d4"
     }
 }

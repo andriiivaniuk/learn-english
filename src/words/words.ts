@@ -1,26 +1,6 @@
 import { scrambleArr } from "../utils/utils.ts";
 
-export interface Iword {
-    id: number,
-    word: string,
-    speechPart: EspeechPart,
-    translationUkr: string,
-    translationRus: string,
-    difficulty: EdifficultyLevel,
-    themes: string[]
-}
-
-export enum EspeechPart {
-    Noun = "Noun",
-    Adjective = "Adjective",
-    Verb = "Verb"
-}
-
-export enum EdifficultyLevel {
-    Easy = "Easy",
-    Medium = "Medium",
-    Hard = "Hard"
-}
+import { Iword, EdifficultyLevel, EspeechPart } from "./Interfaces.ts";
 
 export const words: Iword[] = [
     {
@@ -175,8 +155,34 @@ export const words: Iword[] = [
         translationRus: "случайный",
         difficulty: EdifficultyLevel.Easy,
         themes: ["other"]
+    },
+    {
+        id: 17,
+        speechPart: EspeechPart.Noun,
+        word: "splash",
+        translationUkr: "сплеск",
+        translationRus: "всплеск",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["other"]
+    },
+    {
+        id: 18,
+        speechPart: EspeechPart.Adjective,
+        word: "precise",
+        translationUkr: "точний",
+        translationRus: "точный",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["character traits"]
+    },
+    {
+        id: 19,
+        speechPart: EspeechPart.Verb,
+        word: "foster",
+        translationUkr: "виховувати",
+        translationRus: "воспитывать",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["family"]
     }
-
 
 ];
 

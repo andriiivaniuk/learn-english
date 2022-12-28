@@ -52,25 +52,17 @@ function Test() {
     }, [currentWordData]);
 
     useEffect(() => {
-        if (!ifUserStartedTest) {
-            navigate("/");
-            return;
-        }
-
+        if (!ifUserStartedTest) {navigate("/"); return}
         dispatch(fetchWordInfo(testWords[currentIndex].word));
         formAnswersArr();
     }, []);
 
     function formAnswersArr() {
-        if (!ifUserStartedTest) {
-            navigate("/");
-            return;
-        }
-        
+        if (!ifUserStartedTest) {navigate("/"); return}
         setCurrentAnswers(
             scrambleArr(
                 [testWords[currentIndex].word,
-                ...getAnswers(testWords[currentIndex].word)])
+                ...getAnswers(testWords[currentIndex].word, testWords[currentIndex].speechPart)])
         );
     }
 
@@ -86,6 +78,7 @@ function Test() {
     }
 
     const handleResultsClick = () => {
+        dispatch(clearCurrentPictureData());
         navigate("/results");
     }
 
@@ -105,7 +98,7 @@ function Test() {
     return ( 
         <TestStyled>
             <WordNum>
-                Word № {wordNum} out of {testWords.length}
+                Word {wordNum} out of {testWords.length}
             </WordNum>
             {
                 <WordInfo 

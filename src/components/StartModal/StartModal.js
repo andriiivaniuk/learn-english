@@ -18,10 +18,10 @@ import CheckList from "../CheckList/CheckList";
 import AmountSelect from "../AmountSelect/AmountSelect";
 
 import { 
-    EdifficultyLevel, 
-    EspeechPart,
     allWordThemes
 } from "../../words/words.ts";
+
+import { EspeechPart, EdifficultyLevel } from "../../words/Interfaces.ts";
 
 import { disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
 
