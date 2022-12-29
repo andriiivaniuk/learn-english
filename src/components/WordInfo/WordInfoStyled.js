@@ -17,6 +17,7 @@ export const WordInfoStyled = styled.article`
 `
 
 export const PartOfSpeech = styled.span`
+    display: block;
     margin-top: 1rem;
     font-weight: 600;
 `

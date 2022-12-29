@@ -4,7 +4,7 @@ import { DESIGN_CONST } from "../../assets/themes/designConstants";
 
 export const TestStyled = styled.div`
     width: 100%;
-    max-width: 1200px;
+    //max-width: 1200px;
     display: flex;
     flex-direction: column;
     align-items: center;

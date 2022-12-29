@@ -1,0 +1,20 @@
+.hidden {
+    opacity: 0;
+    transition: .200s;
+}
+
+.hidden > .wordNum {
+    opacity: 1;
+    transition: .200s;
+}
+
+.shown {
+    opacity: 1;
+    transition: .35s;
+}
+
+.shown > .wordNum {
+    opacity: 1;
+    transition: .35s;
+}
+

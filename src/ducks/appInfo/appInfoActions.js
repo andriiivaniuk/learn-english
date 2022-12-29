@@ -26,7 +26,7 @@ export const fetchWordInfo = (word) => {
                 }
             })
             .then(result => {
-                console.log(result);
+                //console.log(result);
                 dispatch(getCurrentWordInfo(result.data));
             })
             .catch(error => {
@@ -117,7 +117,7 @@ export const searchImages = (word) => {
         axios.
             request(options)
             .then(result => {
-                console.log(result);
+                //console.log(result);
                 dispatch(getCurrentPictureData(result.data));
             })
             .catch(error => {

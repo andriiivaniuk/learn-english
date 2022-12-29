@@ -28,6 +28,8 @@ import { scrambleArr, getAnswers} from "../../utils/utils.ts";
 
 import Picture from "../../components/Picture/Picture";
 
+import "./TestCss.css";
+
 
 function Test() {
     const dispatch = useDispatch();
@@ -47,11 +49,14 @@ function Test() {
     const [loading, setLoading] = useState(true);
     const [wordNum, setWordNum] = useState(1);
 
+    const [isFading, setIsFading] = useState(false);
+
     useEffect(() => {
         if (currentWordData) {
             setLoading(false);
         }
         formAnswersArr();
+        setIsFading(false);
     }, [currentWordData]);
 
     useEffect(() => {
@@ -70,14 +75,18 @@ function Test() {
     }
 
     const handleNextClick = () => {
-        setLoading(true);
-        dispatch(fetchWordInfo(testWords[currentIndex + 1].word));
-        dispatch(clearCurrentPictureData());
-        setCurrentIndex(currentIndex + 1);
-        setWordNum(wordNum + 1);
+        setIsFading(true);
 
-        setIsAnswered(false);
-        setIsHighlight(false);
+        setTimeout(() => {
+            setLoading(true);
+            dispatch(fetchWordInfo(testWords[currentIndex + 1].word));
+            dispatch(clearCurrentPictureData());
+            setCurrentIndex(currentIndex + 1);
+            setWordNum(wordNum + 1);
+    
+            setIsAnswered(false);
+            setIsHighlight(false);
+        }, 200);
     }
 
     const handleResultsClick = () => {
@@ -104,12 +113,12 @@ function Test() {
     }
 
     return ( 
-        <TestStyled>
-            <WordNum>
+        <TestStyled className={isFading ? "hidden" : "shown"}>
+            <WordNum className = "wordNum">
                 {TestTexts.word[lang]} {wordNum} {TestTexts.outOf[lang]} {testWords.length}
             </WordNum>
             {
-                <WordInfo 
+                <WordInfo
                     loading = {loading}
                     wordData = {currentWordData}
                     wordObj = {testWords[currentIndex]} 

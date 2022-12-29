@@ -17,7 +17,7 @@ const getInitialStore = () => {
             currentWordData: null,
             currentPictureData: null,
             results: null,
-            userLanguage: "ua",
+            userLanguage: checkStorageForLang(),
             modalSpeechParts: [],
             modalDiffLevels: [],
             modalAllWordThemes: [],
@@ -38,3 +38,11 @@ export const store = legacy_createStore(
 )
 
 export default store;
+
+function checkStorageForLang() {
+    if (localStorage.getItem("lang") !== null) {
+        return localStorage.getItem("lang");
+    } else {
+        return "ua";
+    }
+}

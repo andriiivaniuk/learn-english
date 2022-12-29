@@ -55,12 +55,12 @@ function AmountSelect({title}) {
     const handleChangeClick = (isIncrement) => {
         if (isIncrement && current < max) {
             setCurrent(current + 1);
+            dispatch(setModalCustomMaxWords(current + 1));
         } 
         if (!isIncrement && current > 1) {
             setCurrent(current - 1);
+            dispatch(setModalCustomMaxWords(current - 1));
         }
-        
-        dispatch(setModalCustomMaxWords(current));
     }
 
     const countPossibleWords = () => {
