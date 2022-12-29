@@ -93,7 +93,7 @@ function StartModal({setModalVisibility}) {
 
             if (customMaxWords !== null) {
                 dispatch(setModalSelectedWords(
-                    currentWords.slice(0, customMaxWords - 1)
+                    currentWords.slice(0, customMaxWords)
                 ));
             }
 

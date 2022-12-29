@@ -22,6 +22,7 @@ export const NextButton = styled.button`
     justify-content: center;
     align-items: center;
     min-width: 150px;
+    padding: 0.5rem;
 `
 
 export const OptionsArea = styled.div`

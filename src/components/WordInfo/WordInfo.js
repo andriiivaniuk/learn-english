@@ -3,15 +3,20 @@ import {
     PartOfSpeech
 } from "./WordInfoStyled";
 
+import { WordInfoTexts } from "./WordInfoTexts";
+
 import withLoader from "../../hocs/withLoader/withLoader";
+import { useSelector } from "react-redux";
 
 function WordInfo({wordData, wordObj}) {
+    const lang = useSelector(state => state.appInfo.userLanguage);
+
     return ( 
         <WordInfoStyled>
             {/* {wordData.phonetic} */}
             {formDefinition(wordData, wordObj)}
             <PartOfSpeech>
-                {wordObj.speechPart}
+                {WordInfoTexts[wordObj.speechPart][lang]}
             </PartOfSpeech>
         </WordInfoStyled>
     );

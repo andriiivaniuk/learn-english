@@ -12,7 +12,8 @@ import {
     INCREMENT_WRONG_ANSWERS,
     GET_CURRENT_PICTURE_DATA,
     CLEAR_CURRENT_PICTURE_DATA,
-    SET_USET_STARTED_TEST
+    SET_USET_STARTED_TEST,
+    ADD_MISTAKE_INFO
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -97,6 +98,11 @@ const appInfoReducer = ( state = {}, action) => {
             return {
                 ...state,
                 ifUserStartedTest: true
+            }
+        case ADD_MISTAKE_INFO:
+            return {
+                ...state,
+                mistakesArr: [].concat(state.mistakesArr, action.payload)
             }
         default:
             return state;

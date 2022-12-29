@@ -25,6 +25,7 @@ const getInitialStore = () => {
             modalCustomMax: null,
             rightAnswers: 0,
             wrongAnswers: 0,
+            mistakesArr: [],
             ifUserStartedTest: false
         }
     }

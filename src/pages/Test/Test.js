@@ -8,7 +8,8 @@ import {
     fetchWordInfo,
     incrementRightAnswers,
     incrementWrongAnswers,
-    clearCurrentPictureData
+    clearCurrentPictureData,
+    addMistakeInfo
 } from "../../ducks/appInfo";
 
 import WordInfo from "../../components/WordInfo/WordInfo";
@@ -20,6 +21,8 @@ import {
     OptionsArea,
     WordNum
 } from "./TestStyled";
+
+import { TestTexts } from "./TestTexts";
 
 import { scrambleArr, getAnswers} from "../../utils/utils.ts";
 
@@ -88,6 +91,11 @@ function Test() {
                 dispatch(incrementRightAnswers());
             } else {
                 dispatch(incrementWrongAnswers());
+                dispatch(addMistakeInfo({
+                    wordNum: wordNum,
+                    wordData: testWords[currentIndex],
+                    answers: currentAnswers,
+                }))
             }
     
             setIsAnswered(true);
@@ -98,7 +106,7 @@ function Test() {
     return ( 
         <TestStyled>
             <WordNum>
-                Word {wordNum} out of {testWords.length}
+                {TestTexts.word[lang]} {wordNum} {TestTexts.outOf[lang]} {testWords.length}
             </WordNum>
             {
                 <WordInfo 
@@ -127,13 +135,13 @@ function Test() {
             {
                 (isAnswered && (currentIndex < testWords.length - 1)) &&
                 <NextButton onClick={handleNextClick}>
-                    Next
+                    {TestTexts.next[lang]}
                 </NextButton>
             }
             {
                 (isAnswered && (currentIndex === testWords.length - 1)) &&
                 <NextButton onClick={handleResultsClick}>
-                    View results
+                    {TestTexts.viewResults[lang]}
                 </NextButton>
             }
         </TestStyled> 

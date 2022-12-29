@@ -182,6 +182,15 @@ export const words: Iword[] = [
         translationRus: "воспитывать",
         difficulty: EdifficultyLevel.Hard,
         themes: ["family"]
+    },
+    {
+        id: 20,
+        speechPart: EspeechPart.Noun,
+        word: "orphan",
+        translationUkr: "сирота",
+        translationRus: "сирота",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["family"]
     }
 
 ];

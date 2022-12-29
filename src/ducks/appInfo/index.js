@@ -14,7 +14,8 @@ import {
     searchImages,
     clearCurrentPictureData,
     setUserStartedTest,
-    setModalCustomMaxWords
+    setModalCustomMaxWords,
+    addMistakeInfo
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -37,5 +38,6 @@ export {
     searchImages,
     clearCurrentPictureData,
     setUserStartedTest,
-    setModalCustomMaxWords
+    setModalCustomMaxWords,
+    addMistakeInfo
 };

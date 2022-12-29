@@ -14,6 +14,7 @@ export const GET_CURRENT_PICTURE_DATA = "GET_CURRENT_PICTURE_DATA";
 export const CLEAR_CURRENT_PICTURE_DATA = "CLEAR_CURRENT_PICTURE_DATA";
 export const SET_USET_STARTED_TEST = "SET_USET_STARTED_TEST";
 export const SET_MODAL_CUSTOM_MAX_WORDS = "SET_MODAL_CUSTOM_MAX_WORDS";
+export const ADD_MISTAKE_INFO = "ADD_MISTAKE_INFO";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -142,5 +143,12 @@ export const setModalCustomMaxWords = (max) => {
     return {
         type: SET_MODAL_CUSTOM_MAX_WORDS,
         payload: max
+    }
+}
+
+export const addMistakeInfo = (mistakeObj) => {
+    return {
+        type: ADD_MISTAKE_INFO,
+        payload: mistakeObj
     }
 }
