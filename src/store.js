@@ -16,6 +16,7 @@ const getInitialStore = () => {
             currentWord: null,
             currentWordData: null,
             currentPictureData: null,
+            currentDefinition: null,
             results: null,
             userLanguage: checkStorageForLang(),
             modalSpeechParts: [],

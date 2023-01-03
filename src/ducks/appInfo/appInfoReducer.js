@@ -13,7 +13,9 @@ import {
     GET_CURRENT_PICTURE_DATA,
     CLEAR_CURRENT_PICTURE_DATA,
     SET_USET_STARTED_TEST,
-    ADD_MISTAKE_INFO
+    ADD_MISTAKE_INFO,
+    CLEAR_CURRENT_DEFINITION,
+    SET_CURRENT_DEFINITION
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -104,6 +106,16 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 mistakesArr: [].concat(state.mistakesArr, action.payload)
             }
+        case SET_CURRENT_DEFINITION: 
+            return {
+                ...state,
+                currentDefinition: action.payload
+            }
+        case CLEAR_CURRENT_DEFINITION: 
+        return {
+            ...state,
+            currentDefinition: null
+        }
         default:
             return state;
     }

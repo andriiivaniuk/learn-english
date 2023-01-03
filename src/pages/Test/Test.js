@@ -9,7 +9,8 @@ import {
     incrementRightAnswers,
     incrementWrongAnswers,
     clearCurrentPictureData,
-    addMistakeInfo
+    addMistakeInfo,
+    clearCurrentDefinition
 } from "../../ducks/appInfo";
 
 import WordInfo from "../../components/WordInfo/WordInfo";
@@ -41,6 +42,7 @@ function Test() {
     const testWords = useSelector(state => state.appInfo.modalSelectedWordsArr);
     const [currentIndex, setCurrentIndex] = useState(0);
     const currentWordData = useSelector(state => state.appInfo.currentWordData);
+    const currentDefinition = useSelector(state => state.appInfo.currentDefinition);
     const [currentAnswers, setCurrentAnswers] = useState([]);
 
     const [isHighlight, setIsHighlight] = useState(false);
@@ -81,6 +83,7 @@ function Test() {
             setLoading(true);
             dispatch(fetchWordInfo(testWords[currentIndex + 1].word));
             dispatch(clearCurrentPictureData());
+            dispatch(clearCurrentDefinition());
             setCurrentIndex(currentIndex + 1);
             setWordNum(wordNum + 1);
     
@@ -91,6 +94,7 @@ function Test() {
 
     const handleResultsClick = () => {
         dispatch(clearCurrentPictureData());
+        dispatch(clearCurrentDefinition());
         navigate("/results");
     }
 
@@ -104,6 +108,8 @@ function Test() {
                     wordNum: wordNum,
                     wordData: testWords[currentIndex],
                     answers: currentAnswers,
+                    definition: currentDefinition,
+                    wrongAnswer: answer
                 }))
             }
     

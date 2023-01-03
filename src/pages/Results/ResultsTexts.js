@@ -14,4 +14,9 @@ export const ResultsTexts = {
         ru: "правильных ответов",
         en: "right answers"
     },
+    yourMistakes: {
+        ua: "Ваші помилки",
+        ru: "Ваши ошибки",
+        en: "Your mistakes"
+    }
 }

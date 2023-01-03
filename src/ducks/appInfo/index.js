@@ -15,7 +15,9 @@ import {
     clearCurrentPictureData,
     setUserStartedTest,
     setModalCustomMaxWords,
-    addMistakeInfo
+    addMistakeInfo,
+    setCurrentDefinition,
+    clearCurrentDefinition
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -39,5 +41,7 @@ export {
     clearCurrentPictureData,
     setUserStartedTest,
     setModalCustomMaxWords,
-    addMistakeInfo
+    addMistakeInfo,
+    setCurrentDefinition,
+    clearCurrentDefinition
 };

@@ -1,29 +1,55 @@
+import { useEffect } from "react";
+
 import { useSelector } from "react-redux";
 
+import { useNavigate } from "react-router-dom";
+
 import { ResultsTexts } from "./ResultsTexts";
+
+import Mistake from "../../components/Mistake/Mistake";
 
 import { 
     ResultsStyled,
     ResultsTitle,
-    ResultsSubtitle
+    ResultsSubtitle,
+    MistakesArea,
+    MistakesAreaTitle,
+    MistakesList
 } from "./ResultsStyled";
 
 function Results() {
 
+    const navigate = useNavigate();
     const lang = useSelector(state => state.appInfo.userLanguage)
     const wrongAnswers = useSelector(state => state.appInfo.wrongAnswers);
     const rightAnswers = useSelector(state => state.appInfo.rightAnswers);
     const mistakesArr = useSelector(state => state.appInfo.mistakesArr);
     const modalSelectedWordsArr = useSelector(state => state.appInfo.modalSelectedWordsArr);
 
+    const ifUserStartedTest = useSelector(state => state.appInfo.ifUserStartedTest);
+
+    useEffect(() => {
+        if (!ifUserStartedTest) {navigate("/"); return}
+    }, [])
+
     return <ResultsStyled>
         <ResultsTitle>
             {ResultsTexts.title[lang]}
         </ResultsTitle>
-        <ResultsSubtitle>
+        <ResultsSubtitle> 
             {rightAnswers} {ResultsTexts.rightAnswers[lang]} {ResultsTexts.outOf[lang]} 
             {" "} {modalSelectedWordsArr.length}
         </ResultsSubtitle>
+        {mistakesArr.length > 0 && <MistakesArea>
+            <MistakesAreaTitle>
+                {ResultsTexts.yourMistakes[lang]}:
+            </MistakesAreaTitle>
+            <MistakesList>
+                {mistakesArr.map(mistake =>
+                    <Mistake key={mistake.wordNum} mistakeObj={mistake} />)
+                }
+            </MistakesList>
+        </MistakesArea>}
     </ResultsStyled>;
 }
 
