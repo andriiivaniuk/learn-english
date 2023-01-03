@@ -8,6 +8,8 @@ import { ResultsTexts } from "./ResultsTexts";
 
 import Mistake from "../../components/Mistake/Mistake";
 
+import AmountRunner from "../../components/AmountRunner/AmountRunner";
+
 import { 
     ResultsStyled,
     ResultsTitle,
@@ -36,6 +38,10 @@ function Results() {
         <ResultsTitle>
             {ResultsTexts.title[lang]}
         </ResultsTitle>
+        <AmountRunner max = {(rightAnswers / modalSelectedWordsArr.length) * 100}
+         time = {2000}>
+            %
+        </AmountRunner>
         <ResultsSubtitle> 
             {rightAnswers} {ResultsTexts.rightAnswers[lang]} {ResultsTexts.outOf[lang]} 
             {" "} {modalSelectedWordsArr.length}

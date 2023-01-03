@@ -40,7 +40,7 @@ function Mistake({mistakeObj}) {
                 </Definition>
                 {(lang === "ua" || "ru") &&
                 <Translation>
-                    {MistakeTexts.translation[lang]}: 
+                    {MistakeTexts.translation[lang]}: {" "}
                     {
                         lang === "ua" ? mistakeObj.wordData.translationUkr : mistakeObj.wordData.translationRus
                     }
