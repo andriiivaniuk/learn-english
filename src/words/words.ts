@@ -2,7 +2,7 @@ import { scrambleArr } from "../utils/utils.ts";
 
 import { Iword, EdifficultyLevel, EspeechPart } from "./Interfaces.ts";
 
-export const words: Iword[] = [
+export const words: Iword[] = scrambleArr ([
     {
         id: 0,
         speechPart: EspeechPart.Noun,
@@ -191,9 +191,45 @@ export const words: Iword[] = [
         translationRus: "сирота",
         difficulty: EdifficultyLevel.Medium,
         themes: ["family"]
+    },
+    {
+        id: 21,
+        speechPart: EspeechPart.Noun,
+        word: "fork",
+        translationUkr: "вилка",
+        translationRus: "вилка",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
+    },
+    {
+        id: 22,
+        speechPart: EspeechPart.Noun,
+        word: "napkin",
+        translationUkr: "серветка",
+        translationRus: "солфетка",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
+    },
+    {
+        id: 23,
+        speechPart: EspeechPart.Noun,
+        word: "fridge",
+        translationUkr: "холодильник",
+        translationRus: "холодильник",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
+    },
+    {
+        id: 24,
+        speechPart: EspeechPart.Noun,
+        word: "oven",
+        translationUkr: "пічка",
+        translationRus: "печь",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
     }
 
-];
+]);
 
 export const allPossibleNouns: Iword[] = words.filter(
     word => word.speechPart === EspeechPart.Noun);

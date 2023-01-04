@@ -38,8 +38,7 @@ function Mistake({mistakeObj}) {
                 <Definition>
                     {MistakeTexts.definition[lang]}: {mistakeObj.definition}
                 </Definition>
-                {(lang === "ua" || "ru") &&
-                <Translation>
+                {(lang === "ua" || lang === "ru") && <Translation>
                     {MistakeTexts.translation[lang]}: {" "}
                     {
                         lang === "ua" ? mistakeObj.wordData.translationUkr : mistakeObj.wordData.translationRus
