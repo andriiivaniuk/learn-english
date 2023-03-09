@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,8 @@ import { ResultsTexts } from "./ResultsTexts";
 import Mistake from "../../components/Mistake/Mistake";
 
 import AmountRunner from "../../components/AmountRunner/AmountRunner";
+
+import { clearCurrentWordData } from "../../ducks/appInfo";
 
 import { 
     ResultsStyled,
@@ -20,7 +22,7 @@ import {
 } from "./ResultsStyled";
 
 function Results() {
-
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const lang = useSelector(state => state.appInfo.userLanguage)
     const wrongAnswers = useSelector(state => state.appInfo.wrongAnswers);
@@ -31,6 +33,7 @@ function Results() {
     const ifUserStartedTest = useSelector(state => state.appInfo.ifUserStartedTest);
 
     useEffect(() => {
+        dispatch(clearCurrentWordData());
         if (!ifUserStartedTest) {navigate("/"); return}
     }, [])
 

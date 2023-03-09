@@ -17,6 +17,7 @@ export const SET_MODAL_CUSTOM_MAX_WORDS = "SET_MODAL_CUSTOM_MAX_WORDS";
 export const ADD_MISTAKE_INFO = "ADD_MISTAKE_INFO";
 export const SET_CURRENT_DEFINITION = "SET_CURRENT_DEFINITION";
 export const CLEAR_CURRENT_DEFINITION = "CLEAR_CURRENT_DEFINITION";
+export const CLEAR_CURRENT_WORD_DATA = "CLEAR_CURRENT_WORD_DATA";
 
 export const fetchWordInfo = (word) => {
     return dispatch => {
@@ -165,5 +166,11 @@ export const setCurrentDefinition = (definition) => {
 export const clearCurrentDefinition = () => {
     return {
         type: CLEAR_CURRENT_DEFINITION
+    }
+}
+
+export const clearCurrentWordData = () => {
+    return {
+        type: CLEAR_CURRENT_WORD_DATA
     }
 }

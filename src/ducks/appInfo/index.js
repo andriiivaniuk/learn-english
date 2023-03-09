@@ -17,7 +17,8 @@ import {
     setModalCustomMaxWords,
     addMistakeInfo,
     setCurrentDefinition,
-    clearCurrentDefinition
+    clearCurrentDefinition,
+    clearCurrentWordData
 } from "./appInfoActions";
 
 import appInfoReducer from "./appInfoReducer";
@@ -43,5 +44,6 @@ export {
     setModalCustomMaxWords,
     addMistakeInfo,
     setCurrentDefinition,
-    clearCurrentDefinition
+    clearCurrentDefinition,
+    clearCurrentWordData
 };

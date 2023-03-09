@@ -15,7 +15,8 @@ import {
     SET_USET_STARTED_TEST,
     ADD_MISTAKE_INFO,
     CLEAR_CURRENT_DEFINITION,
-    SET_CURRENT_DEFINITION
+    SET_CURRENT_DEFINITION,
+    CLEAR_CURRENT_WORD_DATA
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -112,10 +113,15 @@ const appInfoReducer = ( state = {}, action) => {
                 currentDefinition: action.payload
             }
         case CLEAR_CURRENT_DEFINITION: 
-        return {
-            ...state,
-            currentDefinition: null
-        }
+            return {
+                ...state,
+                currentDefinition: null
+            }
+        case CLEAR_CURRENT_WORD_DATA:
+            return{
+                ...state,
+                currentWordData: null
+            }
         default:
             return state;
     }
