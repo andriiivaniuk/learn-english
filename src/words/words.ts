@@ -229,7 +229,52 @@ export const words: Iword[] = scrambleArr ([
         translationRus: "печь",
         difficulty: EdifficultyLevel.Easy,
         themes: ["kitchen"]
-    }
+    },
+    {
+        id: 25,
+        speechPart: EspeechPart.Noun,
+        word: "kibble",
+        translationUkr: "сухі корми",
+        translationRus: "сухой корм",
+        difficulty: EdifficultyLevel.Medium,
+        themes: ["pets"]
+    },
+    {
+        id: 26,
+        speechPart: EspeechPart.Noun,
+        word: "whisk",
+        translationUkr: "міксер",
+        translationRus: "миксер",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["kitchen"]
+    },
+    {
+        id: 27,
+        speechPart: EspeechPart.Verb,
+        word: "adopt",
+        translationUkr: "усиновити",
+        translationRus: "усыновить",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["family", "pets"]
+    },
+    {
+        id: 28,
+        speechPart: EspeechPart.Noun,
+        word: "spatula",
+        translationUkr: "лопатка",
+        translationRus: "лопатка",
+        difficulty: EdifficultyLevel.Hard,
+        themes: ["kitchen"]
+    },
+    {
+        id: 29,
+        speechPart: EspeechPart.Noun,
+        word: "kettle",
+        translationUkr: "чайник",
+        translationRus: "чайник",
+        difficulty: EdifficultyLevel.Easy,
+        themes: ["kitchen"]
+    },
 
 ]);
 

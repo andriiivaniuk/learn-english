@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 import {
-    MOBILE_FONT_SIZE,
-    MOBILE_WIDTH,
-    TABLET_FONT_SIZE,
     DESKTOP_FONT_SIZE,
     MAX_SITE_CONTENT
  } from "../../assets/themes/sizeConstants";

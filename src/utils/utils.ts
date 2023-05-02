@@ -1,5 +1,7 @@
+// @ts-ignore
 import { EspeechPart } from "../words/Interfaces.ts";
 
+// @ts-ignore
 import { words } from "../words/words.ts";
 
 export const  scrambleArr = (arr: any[]): any[] => {
