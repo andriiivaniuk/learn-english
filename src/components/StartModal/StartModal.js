@@ -39,6 +39,10 @@ import {
 
 import { StartModalTexts } from "./StartModalTexts";
 
+import {MAIN_MODES} from "../../config/mainModes";
+
+import {setUserStartedLearn} from "../../ducks/appInfo/appInfoActions";
+
 const {diffLevels, speechParts} = getEnumVals();
 
 function StartModal({setModalVisibility}) {
@@ -89,7 +93,15 @@ function StartModal({setModalVisibility}) {
         if (currentWords.length === 0) {
             return;
         } else {
-            dispatch(setUserStartedTest());
+            switch (mode){
+                case MAIN_MODES.learn:
+                    dispatch(setUserStartedLearn());
+                    break;
+                case MAIN_MODES.test:
+                    dispatch(setUserStartedTest());
+                    break;
+                default:
+            }
 
             if (customMaxWords !== null) {
                 dispatch(setModalSelectedWords(

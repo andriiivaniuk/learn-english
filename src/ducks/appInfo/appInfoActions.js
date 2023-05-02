@@ -12,7 +12,8 @@ export const INCREMENT_RIGHT_ANSWERS = "INCREMENT_RIGHT_ANSWERS";
 export const INCREMENT_WRONG_ANSWERS = "INCREMENT_WRONG_ANSWERS";
 export const GET_CURRENT_PICTURE_DATA = "GET_CURRENT_PICTURE_DATA";
 export const CLEAR_CURRENT_PICTURE_DATA = "CLEAR_CURRENT_PICTURE_DATA";
-export const SET_USET_STARTED_TEST = "SET_USET_STARTED_TEST";
+export const SET_USER_STARTED_TEST = "SET_USER_STARTED_TEST";
+export const SET_USER_STARTED_LEARN = "SET_USER_STARTED_LEARN";
 export const SET_MODAL_CUSTOM_MAX_WORDS = "SET_MODAL_CUSTOM_MAX_WORDS";
 export const ADD_MISTAKE_INFO = "ADD_MISTAKE_INFO";
 export const SET_CURRENT_DEFINITION = "SET_CURRENT_DEFINITION";
@@ -138,7 +139,13 @@ export const clearCurrentPictureData = () => {
 
 export const setUserStartedTest = () => {
     return {
-        type: SET_USET_STARTED_TEST
+        type: SET_USER_STARTED_TEST
+    }
+}
+
+export const setUserStartedLearn = () => {
+    return {
+        type: SET_USER_STARTED_LEARN
     }
 }
 

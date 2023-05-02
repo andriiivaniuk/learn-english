@@ -1,4 +1,4 @@
-import { 
+import {
     GET_CURRENT_WORD_INFO,
     SET_USER_LANGUGAGE,
     RESET_MAIN_MODE,
@@ -12,11 +12,11 @@ import {
     INCREMENT_WRONG_ANSWERS,
     GET_CURRENT_PICTURE_DATA,
     CLEAR_CURRENT_PICTURE_DATA,
-    SET_USET_STARTED_TEST,
+    SET_USER_STARTED_TEST,
     ADD_MISTAKE_INFO,
     CLEAR_CURRENT_DEFINITION,
     SET_CURRENT_DEFINITION,
-    CLEAR_CURRENT_WORD_DATA
+    CLEAR_CURRENT_WORD_DATA, SET_USER_STARTED_LEARN
 } from "./appInfoActions";
 
 const appInfoReducer = ( state = {}, action) => {
@@ -97,10 +97,15 @@ const appInfoReducer = ( state = {}, action) => {
                 ...state,
                 currentPictureData: null
             }
-        case SET_USET_STARTED_TEST:
+        case SET_USER_STARTED_TEST:
             return {
                 ...state,
                 ifUserStartedTest: true
+            }
+        case SET_USER_STARTED_LEARN:
+            return {
+                ...state,
+                ifUserStartedLearn: true
             }
         case ADD_MISTAKE_INFO:
             return {

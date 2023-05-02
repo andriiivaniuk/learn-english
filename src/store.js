@@ -27,7 +27,8 @@ const getInitialStore = () => {
             rightAnswers: 0,
             wrongAnswers: 0,
             mistakesArr: [],
-            ifUserStartedTest: false
+            ifUserStartedTest: false,
+            ifUserStartedLearn: false
         }
     }
 }
