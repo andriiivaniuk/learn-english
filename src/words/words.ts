@@ -1,5 +1,7 @@
+// @ts-ignore
 import { scrambleArr } from "../utils/utils.ts";
 
+// @ts-ignore
 import { Iword, EdifficultyLevel, EspeechPart } from "./Interfaces.ts";
 
 export const words: Iword[] = scrambleArr ([
@@ -247,6 +249,7 @@ words.forEach((word) => {
     });
 })
 
+// @ts-ignore
 export const allWordThemes: string[] = [...wordThemes] as string[];
 
 
@@ -257,7 +260,9 @@ words.forEach((word) => {
     wordTranslationsRus.add(word.translationRus);
 });
 
+// @ts-ignore
 const allWordTranslationsRus: string[] = scrambleArr([...wordTranslationsRus] as string[]);
+// @ts-ignore
 const allWordTranslationsUkr: string[] = scrambleArr([...wordTranslationsUkr] as string[]);
 
 export const allWordTranslations: Object = {

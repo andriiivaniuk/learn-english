@@ -8,6 +8,7 @@ import Main from "./pages/Main/Main";
 import Info from "./pages/Info/Info";
 import Test from "./pages/Test/Test";
 import Results from "./pages/Results/Results";
+import Learn from "./pages/Learn/Learn";
 
 const Router = () => {
     return(
@@ -16,6 +17,7 @@ const Router = () => {
             <Route path = "/info" element = {<Info />}></Route>
             <Route path = "/test" element = { <Test />}> </Route>
             <Route path = "/results" element = {<Results />}></Route>
+            <Route path = "/learn" element={<Learn />}></Route>
         </Routes>
     )
 }
