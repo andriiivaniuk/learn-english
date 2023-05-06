@@ -14,7 +14,7 @@ import {
     LanguageOption
 } from "./LangDropDownStyled";
 
-import { LANGUAGES } from "../../config/languages";
+import { LANGUAGES } from "../../config/configs";
 
 function LangDropDown() {
 

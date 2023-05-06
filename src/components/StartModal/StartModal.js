@@ -39,7 +39,7 @@ import {
 
 import { StartModalTexts } from "./StartModalTexts";
 
-import {MAIN_MODES} from "../../config/mainModes";
+import {MAIN_MODES} from "../../config/configs";
 
 import {setUserStartedLearn} from "../../ducks/appInfo/appInfoActions";
 

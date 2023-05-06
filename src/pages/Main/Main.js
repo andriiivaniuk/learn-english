@@ -20,7 +20,7 @@ import {
 
 import { MainTexts } from "./MainTexts";
 
-import { MAIN_MODES } from "../../config/mainModes";
+import { MAIN_MODES } from "../../config/configs";
 
 import { selectMainMode } from "../../ducks/appInfo";
 

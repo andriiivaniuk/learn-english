@@ -37,3 +37,10 @@ export const MistakesAreaTitle = styled.span`
     font-size: 2rem;
     text-align: center;
 `
+
+export const ComplimentPhrase = styled.span`
+    margin: 1rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+`
